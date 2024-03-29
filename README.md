@@ -8,7 +8,7 @@ Notejam application implemented using `Django <https://www.djangoproject.com/>`_
 
 Django version: 1.6.5
 
-==========================
+
 Installation and launching
 ==========================
 
