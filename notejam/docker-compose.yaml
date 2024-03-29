@@ -1,0 +1,40 @@
+
+version: '3'
+
+services:
+
+  app:
+
+    build:
+
+      context: .
+
+      dockerfile: Dockerfile.app
+
+    ports:
+
+      - "4444:8080"
+
+    depends_on:
+
+      - postgresdb
+
+    environment:
+
+      - DB_ENGINE=django.db.backends.postgresql_psycopg2
+
+      - DB_NAME=postgres
+
+      - DB_USER=postgres
+
+      - DB_PASSWORD=postgres
+
+      - DB_HOST=postgresdb
+
+      - DB_PORT=5432
+ 
+  postgresdb:
+
+    build:
+      context: .
+      dockerfile: Dockerfile.db
